@@ -1,0 +1,12 @@
+// itgid.info - курс Node.js
+
+// Создайте анонимный модуль который принимает строку и возвращает ее очищенной 
+// от пробелов (по краям строки) и приведенной к нижнему регистру. Модуль должен 
+// быть реализован в данном файле. 
+
+module.exports = function (string) {
+    if (string) {
+        return string.trim().toLowerCase();
+    }
+    return "enter the string";
+}
