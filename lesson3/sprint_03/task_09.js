@@ -7,14 +7,9 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = function (folderName) {
-    if (folderName) {
-        if (fs.existsSync(folderName)) {
-            return fs.readdirSync(folderName).map((i) => path.parse(i).name);
-        } else {
-            return false;
-        }
-    } else {
-        return false;
+    if (folderName && fs.existsSync(folderName)) {
+        return fs.readdirSync(folderName);
     }
+    return false;
 }
 

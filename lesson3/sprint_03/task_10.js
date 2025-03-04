@@ -6,20 +6,15 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = function (folderName) {
-    if (folderName) {
-        if (fs.existsSync(folderName)) {
-            let allFiles = fs.readdirSync(folderName);
-            let obj = {};
-            allFiles.forEach((i) => {
-                let filePath = folderName + '/' + String(path.basename(i));
-                obj[path.parse(i).name] = fs.statSync(filePath).size;
-            });
-            return obj;
-        } else {
-            return false;
-        }
-    } else {
-        return false;
+    if (folderName && fs.existsSync(folderName)) {
+        let allFiles = fs.readdirSync(folderName);
+        let obj = {};
+        allFiles.forEach((i) => {
+            let pathToFile = path.join(folderName, i);
+            obj[i] = fs.statSync(pathToFile).size;
+        });
+        return obj;
     }
+    return false;
 }
 
