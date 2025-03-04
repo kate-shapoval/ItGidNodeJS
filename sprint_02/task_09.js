@@ -6,6 +6,6 @@
 
 module.exports = function (s) {
     if (s) {
-        return (s.indexOf('gif') !== -1 || s.indexOf('png') !== -1 || s.indexOf('jpeg') !== -1) ? 'image' : 'not image'
+        return (s.indexOf('gif') !== -1 || s.indexOf('png') !== -1 || s.indexOf('jpeg') !== -1) ? 'image' : false
     }
 }

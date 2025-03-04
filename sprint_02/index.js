@@ -45,11 +45,16 @@ console.log(task_08(['3', 4, '5d', 6])); // ожидаю [3, 4, 6]
 const task_09 = require('./task_09')
 console.log("Task 9");
 console.log(task_09('png'));
+console.log(task_09('jpeg'));
+console.log(task_09('gif'));
+console.log(task_09('rfer'));
 
 // Task 10
 const { password } = require('./task_10');
 console.log("Task 10");
 console.log(password('dfghjkert'));
+console.log(password('dfgert'));
+console.log(password('dfghjkertdfghjk'));
 
 // Task 11
 const task_11 = require('./task_11');

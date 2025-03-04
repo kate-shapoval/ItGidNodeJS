@@ -1,0 +1,18 @@
+// itgid.info - курс Node.js
+
+// Создайте анонимный модуль в данном файле, который принимает имя файла и возвращает его размер. Если файла нет - возвращает 0.
+
+const fs = require('fs');
+
+module.exports = function (fileName) {
+    if (fileName) {
+        if (fs.existsSync(fileName)) {
+            return fs.statSync(fileName).size;
+        } else {
+            return 0;
+        }
+    } else {
+        return 0;
+    }
+}
+

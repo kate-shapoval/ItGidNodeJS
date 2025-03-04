@@ -20,7 +20,8 @@ module.exports.password = function (str) {
         }
         return true;
     } else {
-        console.log("Enter string more than 8 symbols");
+        //console.log("Enter string more than 8 symbols");
+        return false;
     }
 
 }
