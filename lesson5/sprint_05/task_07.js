@@ -6,9 +6,15 @@
 // Внимание!!! Во всех задачах где создаются файлы json, подразумевается utf8, флаг - w. 
 
 const fs = require('fs');
-const path = require('path');
 
 module.exports = function () {
-   
+    const pathToFile = './f_05/01.json';
+    const pathToNewFile = './f_05/07.json';
+    if (fs.existsSync(pathToFile)) {
+        const data = fs.readFileSync(pathToFile, { encoding: 'utf8', flag: 'r' });
+        fs.writeFileSync(pathToNewFile, data, { encoding: 'utf8', flag: 'w' });
+        return fs.existsSync(pathToNewFile);
+    }
+    return false;
 }
 
